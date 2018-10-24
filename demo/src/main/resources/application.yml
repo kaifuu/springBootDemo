@@ -1,0 +1,11 @@
+#----------Redis ≈‰÷√ -------------#
+redis:
+    database: 0
+    host: 127.0.0.11
+    password:
+    pool:
+        max-idle: 100
+        max-total: 300
+        max-wait: 1000
+    port: 6379
+    timeout: 10000
