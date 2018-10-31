@@ -10,9 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by Haima on 2016/06/29.
- */
 public class RedisWrapper implements JedisCommands {
 
     private JedisPool jedisPool;
