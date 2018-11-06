@@ -1,22 +1,33 @@
 redis:
-    database: 0
-    host: 127.0.0.11
-    password:
-    pool:
-        max-idle: 100
-        max-total: 300
-        max-wait: 1000
-    port: 6379
-    timeout: 10000
-demo:
-    datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/demo?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&allowMultiQueries=true&useSSL=false
-        max-active: 255
-        max-idle: 50
-        max-wait: 120000
-        password: oracle11G
-        test-while-idle: true
-        time-between-eviction-runs-millis: 600000
-        username: root
-        validation-query: SELECT 1 FROM DUAL
+  database: 0
+  host: 127.0.0.1
+  password:
+  pool:
+    max-idle: 100
+    max-total: 300
+    max-wait: 1000
+  port: 6379
+  timeout: 10000
+logging:
+  level:
+    com.kaifuu: DEBUG
+    tk.mybatis: ERROR
+    org.springframework: ERROR
+  file: log/demo.log
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: oracle11G
+    # 初始化大小，最小，最大
+    initialSize: 1
+    minIdle: 3
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    filters: stat,wall,slf4j
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5

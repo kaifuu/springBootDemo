@@ -5,11 +5,6 @@ import com.kaifuu.demo.vo.base.BaseVo;
 import javax.persistence.Transient;
 import java.util.List;
 
-/**
- * @version V1.0
- * @date 2018年7月11日
- * @author superzheng
- */
 public class BizCategory extends BaseVo {
     private Integer pid;
     private String name;

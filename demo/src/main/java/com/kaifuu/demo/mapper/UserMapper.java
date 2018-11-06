@@ -6,6 +6,7 @@ import com.kaifuu.demo.util.BaseMapper;
 import java.util.List;
 import java.util.Map;
 
+
 public interface UserMapper extends BaseMapper<User> {
     /**
      * 根据user参数查询用户列表

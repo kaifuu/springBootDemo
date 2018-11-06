@@ -8,11 +8,6 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @version V1.0
- * @date 2018年7月11日
- * @author superzheng
- */
 public class User implements Serializable{
     private static final long serialVersionUID = -8736616045315083846L;
     @Id

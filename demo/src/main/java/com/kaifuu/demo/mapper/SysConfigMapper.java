@@ -2,7 +2,7 @@ package com.kaifuu.demo.mapper;
 
 
 import com.kaifuu.demo.model.SysConfig;
-import tk.mybatis.mapper.common.Mapper;
+import com.kaifuu.demo.util.BaseMapper;
 
-public interface SysConfigMapper extends Mapper<SysConfig> {
+public interface SysConfigMapper extends BaseMapper<SysConfig> {
 }
