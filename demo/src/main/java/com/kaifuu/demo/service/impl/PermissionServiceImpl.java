@@ -48,8 +48,8 @@ public class PermissionServiceImpl implements PermissionService {
     }
 
     @Override
-    public int updateStatus(String permissionId, Integer status) {
-        return permissionMapper.updateStatusByPermissionId(permissionId, status);
+    public int updateStatus(String  permissionId,Integer status) {
+        return permissionMapper.updateStatusByPermissionId(permissionId,status);
     }
 
     @Override
