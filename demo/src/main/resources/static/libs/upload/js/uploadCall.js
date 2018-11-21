@@ -24,13 +24,14 @@
  </p>
  </div>
  */
-var notFountUrl = "http://errorpage.b0.upaiyun.com/dev-img-zone-404";
+ var notFountUrl = "http://errorpage.b0.upaiyun.com/dev-img-zone-404";
 if (typeof(envir) !== 'undefined' && (envir == "stage" || envir == "pe")) {
     notFountUrl = "https://errorpage.b0.upaiyun.com/dev-img-zone-404";
 }
 
 
-function echoGtUploadRes() {
+
+function echoGtUploadRes(){
     echoGtUploadResClazz(".gtuploader");
 }
 
@@ -60,9 +61,9 @@ var echoGtDownloadRes = function () {
     $(".upload-item .btn-gtdownload").each(function () {
         var picker = $(this);
         var url = $(this).attr("href");
-        if (!$(picker).attr("href")) {//give a default url
+        if(!$(picker).attr("href")){//give a default url
             url = notFountUrl;
-            $(this).attr("href", url);
+            $(this).attr("href",url);
         }
         echoGtUploadResMethd(url, picker);
     })
@@ -120,13 +121,13 @@ var echoGtUploadResMethd = function (url, picker) {
         $(iEle).attr("class", "fa fa-file-powerpoint-o fz-70");
     } else if (apkReg.test(url)) {
         $(iEle).attr("class", "fa fa-android fz-70");
-    } else if (musicReg.test(url)) {
+    }else if(musicReg.test(url)){
         $(iEle).attr("class", "fa fa-music fz-70");
     }
     else {
         $(iEle).hide();
         $(fileEle).find("img").remove();
-        $(fileEle).append("<img src='" + notFountUrl + "'>");
+        $(fileEle).append("<img src='"+notFountUrl+"'>");
         //$(fileEle).append("<img src=\"" + url + "\">");
         warpImg = true;
     }
@@ -134,7 +135,7 @@ var echoGtUploadResMethd = function (url, picker) {
     if (warpImg && url) {//a标签包裹img
         $(iEle).siblings("img").wrap("<a href='" + url + "' target='_blank' class='a-file'></a>");
     } else {//a标签包裹i
-        if (url) {
+        if(url){
             $(iEle).wrap("<a href='" + url + "' target='_blank' class='a-file'></a>");
             $(iEle).show();
         }

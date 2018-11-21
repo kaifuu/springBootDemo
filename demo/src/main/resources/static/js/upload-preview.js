@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2018
+ * Copyright (c) 2018 yadong.zhang
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,11 @@
  *
  * 图片预览
  *
+ * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
+ * @website https://www.zhyd.me
+ * @version 1.0
+ * @date 2018-04-25
+ * @since 1.0
  */
 /*
  * jq 1.9以后已不再支持$.browser 和 $.browser.version,此处自己实现
@@ -34,17 +39,17 @@ var userAgent = navigator.userAgent.toLowerCase();
 
 // Figure out what browser is being used
 jQuery.browser = {
-    version: (userAgent.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [0, '0'])[1],
-    safari: /webkit/.test(userAgent),
-    opera: /opera/.test(userAgent),
-    msie: /msie/.test(userAgent) && !/opera/.test(userAgent),
-    mozilla: /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent)
+    version: (userAgent.match( /.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/ ) || [0,'0'])[1],
+    safari: /webkit/.test( userAgent ),
+    opera: /opera/.test( userAgent ),
+    msie: /msie/.test( userAgent ) && !/opera/.test( userAgent ),
+    mozilla: /mozilla/.test( userAgent ) && !/(compatible|webkit)/.test( userAgent )
 };
 
 jQuery.fn.extend({
     uploadPreview: function (opts) {
         var _self = this,
-            _this = $(this);
+                _this = $(this);
         opts = jQuery.extend({
             imgContainer: "",
             width: 100,
@@ -66,7 +71,7 @@ jQuery.fn.extend({
         };
         _this.change(function () {
             var $this = this;
-            if (!opts.imgContainer) {
+            if(!opts.imgContainer){
                 console.error("未指定imgContainer");
                 return;
             }

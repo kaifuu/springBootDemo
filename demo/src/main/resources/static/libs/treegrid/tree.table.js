@@ -1,8 +1,10 @@
 /**
  * 初始化 Tree Table 的封装
+ *
+ * @author cyf
  */
 (function () {
-    var TreeTable = function (tableId, url, columns, selectedId) {
+    var TreeTable = function (tableId, url, columns,selectedId) {
         this.btInstance = null;					//jquery和bootstrapTreeTable绑定的对象
         this.bstableId = tableId;
         this.url = url;
@@ -26,7 +28,7 @@
         init: function () {
             var tableId = this.bstableId;
             this.btInstance =
-                $('#' + tableId).bootstrapTreeTable({
+                $('#'+tableId).bootstrapTreeTable({
                     id: this.id,// 选取记录返回的值
                     code: this.code,// 用于设置父子关系
                     parentCode: this.parentCode,// 用于设置父子关系
@@ -78,7 +80,7 @@
          * 设置是否默认全部展开
          */
         setExpandAll: function (expandAll) {
-            this.expandAll = expandAll;
+        	this.expandAll = expandAll;
         },
         setStriped: function (striped) {
             this.striped = striped;
@@ -87,7 +89,7 @@
          * 设置表格高度
          */
         setHeight: function (height) {
-            this.height = height;
+        	this.height = height;
         },
         /**
          * 设置ajax post请求时候附带的参数

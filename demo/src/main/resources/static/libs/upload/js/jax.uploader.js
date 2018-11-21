@@ -37,8 +37,8 @@
             } else if (typeof(imgAccept) == "string") {
                 accepts = imgAccept;
             }
-            if (typeof(options.accepts) == "string") {
-                accepts = options.accepts;
+            if(typeof(options.accepts) == "string"){
+                accepts=options.accepts;
             }
             var basic_server = "http://www.nbclass.com/upload";
             var swf = "https://static.dev.egtcp.com/static/plugins/gt_uploader/Uploader.swf";
@@ -69,7 +69,7 @@
                 options: options || {},
                 defaults: {
                     server: basic_server,
-                    swf: swf,
+                    swf:swf,
                     autoUpload: true,
                     progress: true,
                     aspectRatio: 1, // 裁减比例
@@ -100,16 +100,16 @@
                     }).on('uploadSuccess', function (file, resp) {
                         var picker = document.getElementById('rt_' + file.source.ruid).parentNode;
                         uploader.cancelFile(file);
-                        if (resp.status == 200) {
+                        if(resp.status==200){
                             if (success) success(resp.url, picker);
-                        } else {/*失败*/
-                            layer.msg(resp.msg, function () {
+                        }else{/*失败*/
+                            layer.msg(resp.msg, function(){
                             });
                         }
 
                     }).on('uploadError', function (file, reason) {
                         var picker = document.getElementById('rt_' + file.source.ruid).parentNode;
-                        layer.msg("上传失败", function () {
+                        layer.msg("上传失败", function(){
                         });
 
                     }).on('beforeFileQueued', function (file) {
@@ -118,14 +118,14 @@
 
                         //检查格式
                         if (fileSize * 1024 * 1024 < file.size) {
-                            if (options.lang === 'en') {
-                                layer.msg("File Exceeds Size Limits.", function () {
+                            if(options.lang === 'en'){
+                                layer.msg("File Exceeds Size Limits.", function(){
                                 });
                             } else {
-                                layer.msg("尺寸超过限制", function () {
+                                layer.msg("尺寸超过限制", function(){
                                 });
                             }
-
+                            
                             //console.log(0);
                             //$(error).text("尺寸超过限制");
                             //$(error).removeClass("hide");
@@ -142,7 +142,7 @@
                         }
 
                         if (extsCount == 0) {
-                            layer.msg("文件格式不正确", function () {
+                            layer.msg("文件格式不正确", function(){
                             });
                             //console.log(1);
                             //$(error).text("文件格式不正确");
